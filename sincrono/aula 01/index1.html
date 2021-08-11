@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pt-br>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let notas = [1, 2, 7, 9];
+        let media = notas.reduce((acumulador, numAtual) => {
+            let valorMostrado = acumulador + numAtual;
+            console.log(`Soma: ${valorMostrado}`);
+            return valorMostrado;
+        },0)/notas.length;
+
+        console.log("Sua Média é: ", media);
+        let contador = 0;
+
+        notas.forEach (elemento => {
+            let mensagem;
+            contador++;
+
+            if(elemento >= 7){
+                mensagem = `Parabéns pela conclusão do ${contador}º bimestre. Sua nota foi: ${elemento}`
+            }else{
+                mensagem = `Infelizmente você não atingiu nota suficiente no ${contador}º bimestre para aprovação. Sua nota foi: ${elemento}`    
+            }
+            console.log(mensagem)
+        })
+
+    </script>
+</body>
+</html>
